@@ -25,4 +25,19 @@ ActiveRecord::Schema.define(version: 20161110012855) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "critics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "reviewer_name"
+    t.boolean "reviewer_type" #0 for viewer, 1 for critic
+    t.string "content"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

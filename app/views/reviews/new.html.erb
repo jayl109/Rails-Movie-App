@@ -1,0 +1,7 @@
+<%= simple_form_for @review, url: reviews_new_path do |r| %>
+  <%= r.input :reviewer_name %>
+  <%= r.input :reviewer_type %>
+  <%= r.input :content %>
+  <%= r.input :rating %>
+  <%= r.button :submit, "Submit a review." %>
+<% end %>
