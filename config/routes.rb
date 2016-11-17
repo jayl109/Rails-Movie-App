@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get "/movies", to: "movies#index"
-  patch "/delete", to: "reviews#delete", as: 'delete'
-  #post "reviews/new", to: "reviews#"
+  get "/reviews/new", to: "reviews#new"
+  get "/reviews/index", to: "reviews#index"
+  post "/reviews/new", to: "reviews#create"
+  patch '/reviews/new' => 'reviews#new', as: 'new'
+  patch '/reviews/delete' => 'reviews#delete', as: 'delete'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

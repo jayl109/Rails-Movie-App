@@ -1,0 +1,6 @@
+<%= button_to "Create Review", new_path(), :class => "button medium", :method => :patch %>
+
+<% @reviews.each do |r| %>
+	<p><%= r.rating %>, <%= r.text %></p> 
+	<%= button_to "Delete Review", delete_path(id: r.id), :class => "button medium", :method => :patch %>
+<% end %>
