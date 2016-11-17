@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "/movies", to: "movies#index"
   get "/reviews/new", to: "reviews#new"
   get "/reviews/index", to: "reviews#index"
+  get "/", to: "reviews#index"
   post "/reviews/new", to: "reviews#create"
   get "/critics", to: "critics#index"
   patch '/reviews/new' => 'reviews#new', as: 'new'
