@@ -3,5 +3,9 @@
 #
 # Examples:
 #
-Movie.create( name: 'Star Wars' , avg_rating: 5)
-Critic.create(name: 'Joe')
+Movie.create(name: 'Star Wars', avg_rating: 100)
+Movie.create(name: 'Transformers', avg_rating: 0)
+Critic.create(name: 'Joe', bio: "I'm Joe. I like movies.")
+Critic.create(name: 'Rob', bio: "I'm Rob. I like movies.")
+Critic.create(name: 'Moe', bio: "I'm Moe. I like movies.")
+Critic.create(name: 'Bob', bio: "I'm Bob. I like movies.")
