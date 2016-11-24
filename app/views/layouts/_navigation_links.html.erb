@@ -1,0 +1,6 @@
+<% if viewer_signed_in? %>
+  <li><%= link_to 'Log Out', destroy_viewer_session_path, :method=>'delete' %></li>
+<% else %>
+  <li><%= link_to 'Log In', new_viewer_session_path %></li>
+  <li><%= link_to 'Create an account', new_viewer_registration_path %></li>
+<% end %>
