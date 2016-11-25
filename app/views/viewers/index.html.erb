@@ -1,1 +1,5 @@
-<h1> Test </h1>
+<%= button_to "All Movies", movies_path, :class => "button medium", :method => :get %>
+<h1> Your subscribed movies</h1>
+<%= current_viewer.movies %>
+
+<h1> Your subscribed critics</h1>

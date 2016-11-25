@@ -5,12 +5,16 @@
     <th>Title</th>
     <th>Average Rating</th>
     <th>Review</th>
+    <th>Subscription</th>
   </tr>
   <% @movies.each do |m| %>
     <tr>
       <td><%= m.name %></td>
       <td><%= m.avg_rating %></td>
       <td><a href="../reviews/new">Create a review for this movie!</a></td>
+      <td>placeholder</td>
+
+
     </tr>
   <% end %>
 </table>

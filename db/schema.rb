@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124063824) do
+ActiveRecord::Schema.define(version: 20161125225601) do
 
   create_table "critics", force: :cascade do |t|
     t.string   "name"
-    t.string   "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "bio"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -26,10 +26,21 @@ ActiveRecord::Schema.define(version: 20161124063824) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "movies_and_viewers", force: :cascade do |t|
+  end
+
+  create_table "movies_viewers", id: false, force: :cascade do |t|
+    t.integer "viewer_id"
+    t.integer "movie_id"
+    t.index ["movie_id"], name: "index_movies_viewers_on_movie_id"
+    t.index ["viewer_id"], name: "index_movies_viewers_on_viewer_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string  "text"
     t.integer "critic_id"
+    t.integer "movie_id"
   end
 
   create_table "viewers", force: :cascade do |t|
@@ -48,6 +59,13 @@ ActiveRecord::Schema.define(version: 20161124063824) do
     t.string   "last_sign_in_ip"
     t.index ["email"], name: "index_viewers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_viewers_on_reset_password_token", unique: true
+  end
+
+  create_table "viewers_and_movies", id: false, force: :cascade do |t|
+    t.integer "viewers_id"
+    t.integer "movies_id"
+    t.index ["movies_id"], name: "index_viewers_and_movies_on_movies_id"
+    t.index ["viewers_id"], name: "index_viewers_and_movies_on_viewers_id"
   end
 
 end
