@@ -1,0 +1,10 @@
+<h3>Movie</h3>
+
+<p>Name: <%= @movie.name if @movie.name %></p>
+
+<p>Reviews</p>
+<% @reviews.each do |r| %>
+	<% if r.movie_id == @movie.id %>
+		<p>Critic: <%= Critic.find(r.critic_id).name %>, Rating: <%= r.rating %>, Comments: <%= r.text %></p>
+	<% end %>
+<% end %>
