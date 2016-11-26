@@ -4,6 +4,7 @@
     <th>Name</th>
     <th>Biography</th>
     <th>Reviews</th>
+    <th>Subscription</th>
   </tr>
   <% @critics.each do |c| %>
     <tr>
@@ -20,6 +21,11 @@
           <% end %>
         </table>
       </td>
+      <% if current_viewer.critics.include? c %>
+        <td><%= button_to "Unsubscribe", movies_path, :class => "button medium", :method => :get %></td>
+      <% else %>
+        <td><%= button_to "Subscribe", movies_path, :class => "button medium", :method => :get %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

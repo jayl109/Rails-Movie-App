@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :viewers
   resources :viewers
+  resources :movies
   get 'movies', to: "movies#index"
   get "/movies", to: "movies#index"
   get "/reviews/new", to: "reviews#new"

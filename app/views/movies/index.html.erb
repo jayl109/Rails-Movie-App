@@ -9,18 +9,26 @@
   </tr>
   <% @movies.each do |m| %>
     <tr>
-      <td><%= m.name %></td>
+
+      
+      <td><%= link_to m.name, movie_path(m.id) %></td>
       <td><%= m.avg_rating %></td>
-      <td><a href="../reviews/new">Create a review for this movie!</a></td>
-      <td>placeholder</td>
+      
+      <td><%= button_to "Review", reviews_new_path(id: m.id), :class => "button medium", :method => :get %></td>
+      <% if current_viewer.movies.include? m %>
+        <td><%= button_to "Unsubscribe", movies_path, :class => "button medium", :method => :get %></td>
+      <% else %>
+        <td><%= button_to "Subscribe", movies_path, :class => "button medium", :method => :get %></td>
+      <% end %>
 
 
     </tr>
-  <% end %>
+  <% end %> 
 </table>
 
 <br>
 <h3>Notes</h3>
 - A review is not currently attached to any movie; there is an attribute movie_id for a review; use this somehow?<br>
 - Only critics should be able to make reviews?<br>
-- <a href="../critics">Temporary link to Critics</a>
+- <a href="../critics">Temporary link to Critics</a><br>
+- Compute avg_rating; should be out of 100/integer

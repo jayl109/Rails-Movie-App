@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
 		@review.rating = params[:review][:rating]
 		@review.text = params[:review][:text]
 		@review.critic_id = current_viewer.id
+		@review.movie_id = :id
 		@review.save
 		redirect_to "/reviews/index"
 	end
