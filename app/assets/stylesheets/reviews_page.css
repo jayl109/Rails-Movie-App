@@ -2,3 +2,7 @@
 	margin: 0px auto;
 	width: 75%;
 }
+
+#reviews_table td {
+	text-align: justify;
+}
