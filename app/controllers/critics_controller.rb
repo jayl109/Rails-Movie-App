@@ -14,5 +14,6 @@ class CriticsController < ApplicationController
 		end
 	def show
 		@critic = Critic.find(params[:id])
+		@reviews = Review.all
 	end
 end
