@@ -14,7 +14,7 @@
         <table>
           <% c.reviews.each do |r| %>
             <tr>
-              <td>Get movie name by ID somehow</td>
+              <td><%= r.movie.name %></td>
               <td><%= r.rating %></td>
               <td><%= r.text %></td>
             </tr>
