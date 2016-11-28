@@ -20,7 +20,7 @@
         <% @reviews.each do |r| %>
           <% if r.movie_id == @movie.id %>
             <tr>
-              <td><%= Critic.find(r.critic_id).name %></td>
+              <td><%= Viewer.find(r.viewer_id).name %></td>
               <td><%= r.rating %></td>
               <td><%= r.text %></td>
             </tr>

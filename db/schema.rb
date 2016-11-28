@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128065139) do
+ActiveRecord::Schema.define(version: 20161128073525) do
 
   create_table "critics", force: :cascade do |t|
     t.string   "name"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20161128065139) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string  "text"
-    t.integer "critic_id"
     t.integer "movie_id"
+    t.integer "viewer_id"
   end
 
   create_table "roles", force: :cascade do |t|
