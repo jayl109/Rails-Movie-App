@@ -20,6 +20,8 @@ class ReviewsController < ApplicationController
 		@review.text = params[:review][:text]
 		@review.critic_id = Critic.first.id #current_viewer.id
 		@review.movie_id = params[:movie_id]
+		@movie = Movie.find(params[:movie_id])
+		@movie.update_attribute(:avg_rating, compute_avg_rating_path(:movie_id))
 		@review.save
 		redirect_to "/movies"
 	end
