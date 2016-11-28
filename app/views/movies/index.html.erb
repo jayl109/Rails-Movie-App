@@ -16,7 +16,6 @@
       <% if current_viewer.movies.include? m %>
         <td><%= button_to "Unsubscribe", unsubscribe_path(id: m), :class => "button medium", :method => :patch %></td>
       <% else %>
-
         <td><%= button_to "Subscribe", subscribe_path(id: m), :class => "button medium", :method => :patch %></td>
       <% end %>
     </tr>

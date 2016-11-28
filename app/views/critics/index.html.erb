@@ -1,4 +1,4 @@
-<h1 id="critcs_title">Critics</h1>
+<h1>Critics</h1>
 <table id="critics_table">
   <tr>
     <th>Name</th>
@@ -8,7 +8,7 @@
   </tr>
   <% @critics.each do |c| %>
     <tr>
-      <td><%= c.name %></td>
+      <td><%= link_to c.name, critic_path(c.id) %></td>
       <td><%= c.bio %></td>
       <td>
         <table>
