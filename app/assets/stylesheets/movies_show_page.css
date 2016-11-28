@@ -1,0 +1,7 @@
+#movie_table {
+	margin: 0px auto;
+	width: 50%
+}
+#movie_table td {
+	text-align: justify;
+}

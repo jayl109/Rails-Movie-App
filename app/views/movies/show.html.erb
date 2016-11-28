@@ -1,11 +1,32 @@
 <h1><%= @movie.name if @movie.name %></h1>
 
 <h3>Average Rating: <%= @movie.avg_rating if @movie.avg_rating %></h3>
-<p>Description: <%= @movie.description if @movie.description %></p>
+<b>REMOVE</b> - Compute average rating?<br><br>
 
-<p>Reviews</p>
-<% @reviews.each do |r| %>
-	<% if r.movie_id == @movie.id %>
-		<p>Critic: <%= Critic.find(r.critic_id).name %>, Rating: <%= r.rating %>, Comments: <%= r.text %></p>
-	<% end %>
-<% end %>
+<table id="movie_table">
+  <tr>
+    <th>Synopsis</th>
+    <td><%= @movie.description if @movie.description %></td>
+  </tr>
+  <tr>
+    <th>Reviews</th>
+    <td>
+      <table>
+        <tr>
+          <th>Critic</th>
+          <th>Rating</th>
+          <th>Review</th>
+        </tr>
+        <% @reviews.each do |r| %>
+          <% if r.movie_id == @movie.id %>
+            <tr>
+              <td><%= Critic.find(r.critic_id).name %></td>
+              <td><%= r.rating %></td>
+              <td><%= r.text %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </td>
+  </tr>
+</table>

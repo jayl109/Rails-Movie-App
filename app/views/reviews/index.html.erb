@@ -1,6 +1,10 @@
+<h1>Reviews</h1>
+
 <%= button_to "Create Review", new_path(), :class => "button medium", :method => :patch %>
 
+<b>REMOVE</b> - Should anyone be able to delete a review?
+
 <% @reviews.each do |r| %>
-	<p><%= r.rating %>, <%= r.text %></p> 
+	<p>MOVIE NAME, <%= r.rating %>, <%= r.text %></p> 
 	<%= button_to "Delete Review", delete_path(id: r.id), :class => "button medium", :method => :patch %>
 <% end %>
