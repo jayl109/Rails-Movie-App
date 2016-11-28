@@ -1,3 +1,27 @@
 <h1><%= @critic.name if @critic.name %></h1>
 
-<h3>Biography: <%= @critic.bio if @critic.bio %></h3>
+<table id="critic_table">
+  <tr>
+    <th>Biography</th>
+    <td><%= @critic.bio if @critic.bio %></td>
+  </tr>
+  <tr>
+    <th>Reviews</th>
+    <td>
+      <table>
+        <tr>
+          <th>Rating</th>
+          <th>Review</th>
+        </tr>
+        <% @reviews.each do |r| %>
+          <% if r.critic_id == @critic.id %>
+            <tr>
+              <td><%= r.rating %></td>
+              <td><%= r.text %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </td>
+  </tr>
+</table>

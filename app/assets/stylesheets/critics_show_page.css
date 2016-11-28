@@ -1,0 +1,8 @@
+#critic_table {
+	margin: 0px auto;
+	width: 75%
+}
+
+#critic_table td {
+	text-align: justify;
+}
