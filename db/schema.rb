@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126025347) do
+ActiveRecord::Schema.define(version: 20161128065139) do
 
   create_table "critics", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 20161126025347) do
     t.integer "movie_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "resource_type"
+    t.integer  "resource_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
+  end
+
   create_table "viewers", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",                          null: false
@@ -64,6 +74,12 @@ ActiveRecord::Schema.define(version: 20161126025347) do
     t.string   "last_sign_in_ip"
     t.index ["email"], name: "index_viewers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_viewers_on_reset_password_token", unique: true
+  end
+
+  create_table "viewers_roles", id: false, force: :cascade do |t|
+    t.integer "viewer_id"
+    t.integer "role_id"
+    t.index ["viewer_id", "role_id"], name: "index_viewers_roles_on_viewer_id_and_role_id"
   end
 
 end

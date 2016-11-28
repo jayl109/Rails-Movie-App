@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/reviews/new", to: "reviews#new"
   get "/reviews/index", to: "reviews#index"
   root to: "viewers#index"
+  get "/viewers/promote", to: "viewers#promote"
   post "/reviews/new", to: "reviews#create"
   get "critics", to: "critics#index"
   patch '/reviews/new' => 'reviews#new', as: 'new'
