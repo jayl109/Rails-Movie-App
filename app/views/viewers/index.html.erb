@@ -6,16 +6,20 @@
   </tr>
   <tr>
     <td>
-      <table>
+      <table class="list_table">
         <% current_viewer.movies.each do |m| %>
-          <tr><%= link_to m.name, movie_path(m.id) %></tr>
+          <tr>
+            <td><%= link_to m.name, movie_path(m.id) %></td>
+          </tr>
         <% end %>
       </table>
     </td>
     <td>
-      <table>
+      <table class="list_table">
         <% current_viewer.critics.each do |c| %>
-          <tr><%= link_to c.name, critic_path(c.id) %></tr>
+          <tr>
+            <td><%= link_to c.name, critic_path(c.id) %></td>
+          </tr>
         <% end %>
       </table>
     </td>
