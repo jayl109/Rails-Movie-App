@@ -1,6 +1,7 @@
-<h3>Movie</h3>
+<h1><%= @movie.name if @movie.name %></h1>
 
-<p>Name: <%= @movie.name if @movie.name %></p>
+<h3>Average Rating: <%= @movie.avg_rating if @movie.avg_rating %></h3>
+<p>Description: <%= @movie.description if @movie.description %></p>
 
 <p>Reviews</p>
 <% @reviews.each do |r| %>
