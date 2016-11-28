@@ -4,22 +4,18 @@
     <th><h3>Movie Subscriptions</h3></th>
     <th><h3>Critic Subscriptions</h3></th>
   </tr>
-  <tr>                                                                  <!-- Remove -->
-    <td><b>REMOVE</b> - This should be a list of subscribed movies.</td>       <!-- Remove -->
-    <td><b>REMOVE</b> - This should be a list of subscribed critics.</td>      <!-- Remove -->
-  </tr>                                                                 <!-- Remove -->
   <tr>
     <td>
       <table>
         <% current_viewer.movies.each do |m| %>
-          <tr><%= m.name %></tr>
+          <tr><%= link_to m.name, movie_path(m.id) %></tr>
         <% end %>
       </table>
     </td>
     <td>
       <table>
         <% current_viewer.critics.each do |c| %>
-          <tr><%= c.name %></tr>
+          <tr><%= link_to c.name, critic_path(c.id) %></tr>
         <% end %>
       </table>
     </td>
