@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get "/critics", to: "critics#index"
   patch '/reviews/new' => 'reviews#new', as: 'new'
   patch '/reviews/delete' => 'reviews#delete', as: 'delete'
+  patch 'subscribe', to: "movies#subscribe", as: "subscribe"
+  patch 'unsubscribe', to: "movies#unsubscribe", as: "unsubscribe"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
