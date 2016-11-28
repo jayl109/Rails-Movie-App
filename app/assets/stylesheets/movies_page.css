@@ -3,6 +3,6 @@ html {
 }
 
 #movies_table {
-	width: 100%;
-	margin: 0px;
+	margin: 0px auto;
+	width: 75%;
 }

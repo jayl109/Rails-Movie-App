@@ -9,8 +9,6 @@
   </tr>
   <% @movies.each do |m| %>
     <tr>
-
-      
       <td><%= link_to m.name, movie_path(m.id) %></td>
       <td><%= m.avg_rating %></td>
       
@@ -20,16 +18,6 @@
       <% else %>
         <td><%= button_to "Subscribe", movies_path, :class => "button medium", :method => :get %></td>
       <% end %>
-
-
     </tr>
   <% end %> 
 </table>
-
-<br>
-<h3>Notes</h3>
-- current_viewer isn't working<br>
-- Only critics should be able to make reviews?<br>
-- <a href="../critics">Temporary link to Critics</a><br>
-- Compute avg_rating; should be out of 100/integer<br>
-- Extra gem of some sort (not from class/hw/proj1)
