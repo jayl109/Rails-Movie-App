@@ -1,0 +1,13 @@
+#viewers_buttons {
+	border: 0px;
+	margin: 0px auto;
+	width: 100%;
+}
+
+#viewers_buttons td {
+	text-align: center;
+}
+
+#viewers_buttons th {
+	text-align: center;
+}

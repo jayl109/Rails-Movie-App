@@ -1,5 +1,31 @@
-<%= button_to "All Movies", movies_path, :class => "button medium", :method => :get %>
-<h1> Your subscribed movies</h1>
-<%= current_viewer.movies %>
-
-<h1> Your subscribed critics</h1>
+<h1>Your Subscriptions</h1>
+<table id="viewers_buttons">
+  <tr>
+    <th><h3>Movie Subscriptions</h3></th>
+    <th><h3>Critic Subscriptions</h3></th>
+  </tr>
+  <tr>                                                                  <!-- Remove -->
+    <td>REMOVE - This should be a list of subscribed movies.</td>       <!-- Remove -->
+    <td>REMOVE - This should be a list of subscribed critics.</td>      <!-- Remove -->
+  </tr>                                                                 <!-- Remove -->
+  <tr>
+    <td>
+      <table>
+        <% current_viewer.movies.each do |m| %>
+          <tr><%= m.name %></tr>
+        <% end %>
+      </table>
+    </td>
+    <td>
+      <table>
+        <% current_viewer.critics.each do |c| %>
+          <tr><%= c.name %></tr>
+        <% end %>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td><%= button_to "Explore Movies", movies_path, :class => "button medium", :method => :get %></td>
+    <td><%= button_to "Explore Critics", critics_path, :class => "button medium", :method => :get %></td>
+  </tr>
+</table>

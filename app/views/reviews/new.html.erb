@@ -1,6 +1,8 @@
 <h1>Leave a Review for "<%=Movie.find(@movie_id).name%>"</h1>
-<%= simple_form_for @review, url: reviews_new_path(movie_id: @movie_id) do |r| %>
-  <%= r.input :rating %>
-  <%= r.input :text %>
-  <%= r.button :submit, "Submit a review." %>
-<% end %>
+<div id="review_form">
+  <%= simple_form_for @review, url: reviews_new_path(movie_id: @movie_id) do |r| %>
+    <%= r.input :rating %>
+    <%= r.input :text %>
+    <%= r.button :submit, "Submit a review." %>
+  <% end %>
+</div>
