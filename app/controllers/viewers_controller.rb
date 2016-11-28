@@ -5,6 +5,7 @@ class ViewersController < ApplicationController
 
 	def show
 		current_viewer.add_role :critic
+		redirect_to '/'
 	end
 	
 end

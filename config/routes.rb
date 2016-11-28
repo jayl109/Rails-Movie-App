@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   patch 'unsubscribe', to: "movies#unsubscribe", as: "unsubscribe"
   patch 'csubscribe', to: "critics#subscribe", as: "csubscribe"
   patch 'cunsubscribe', to: "critics#unsubscribe", as: "cunsubscribe"
+  patch 'becomecritic', to: "viewers#show", as: "becomecritic"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

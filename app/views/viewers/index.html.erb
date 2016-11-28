@@ -30,6 +30,13 @@
   </tr>
 </table>
 
+<% if current_viewer.has_role? :critic%>
+  <%="You are a Critic"%>
+<% else %>
+  <%="You are a Viewer"%>
+<%end%>
+<%= button_to "Become a Critic", becomecritic_path, :class => "button medium", :method => :patch %>
+
 <br>
 <h3>Notes</h3>
 <b>REMOVE</b>- current_viewer isn't working<br>
