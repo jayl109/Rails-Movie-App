@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   patch 'compute_avg_rating', to: 'movies#compute_avg_rating', as: 'compute_avg_rating'
   patch 'subscribe', to: "movies#subscribe", as: "subscribe"
   patch 'unsubscribe', to: "movies#unsubscribe", as: "unsubscribe"
+  patch 'csubscribe', to: "critics#subscribe", as: "csubscribe"
+  patch 'cunsubscribe', to: "critics#unsubscribe", as: "cunsubscribe"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

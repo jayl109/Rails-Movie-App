@@ -22,9 +22,9 @@
         </table>
       </td>
       <% if current_viewer.critics.include? c %>
-        <td><%= button_to "Unsubscribe", movies_path, :class => "button medium", :method => :get %></td>
+        <td><%= button_to "Unsubscribe", cunsubscribe_path(id:c), :class => "button medium", :method => :patch %></td>
       <% else %>
-        <td><%= button_to "Subscribe", movies_path, :class => "button medium", :method => :get %></td>
+        <td><%= button_to "Subscribe", csubscribe_path(id:c), :class => "button medium", :method => :patch %></td>
       <% end %>
     </tr>
   <% end %>
