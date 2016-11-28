@@ -14,7 +14,9 @@ Movie.create(
 				"justice to the Galaxy."
 	)
 Movie.create(name: 'Transformers', avg_rating: 0)
-Critic.create(name: 'Joe', bio: "I'm Joe. I like movies.")
-Critic.create(name: 'Rob', bio: "I'm Rob. I like movies.")
-Critic.create(name: 'Moe', bio: "I'm Moe. I like movies.")
-Critic.create(name: 'Bob', bio: "I'm Bob. I like movies.")
+Critic.create(
+	name: 'John Doe',
+	bio: "I'm Joe. I like movies. I like movies. I like movies. I like movies. I like movies. I like movies. "\
+		"I like movies. I like movies. I like movies. I like movies. I like movies. I like movies. I like "\
+		"movies. I like movies. I like movies. I like movies. I like movies. I like movies. I like movies."
+	)

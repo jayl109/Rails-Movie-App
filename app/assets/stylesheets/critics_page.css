@@ -3,10 +3,6 @@ html {
 }
 
 #critics_table {
-	margin: 0px;
-	width: 100%;
-}
-
-#critic_review {
-	width: 50%;
+	margin: 0px auto;
+	width: 75%;
 }
