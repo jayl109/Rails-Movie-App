@@ -19,9 +19,15 @@
         <% @reviews.each do |r| %>
           <% if r.movie_id == @movie.id %>
             <tr>
-              <td><%= Viewer.find(r.viewer_id).name %></td>
-              <td><%= r.rating %></td>
-              <td><%= r.text %></td>
+              <% if r.critic_id != nil %>
+                <td><%= Critic.find(r.critic_id).name %></td>
+                <td><%= r.rating %></td>
+                <td><%= r.text %></td>
+              <% else %>
+                <td><%= Viewer.find(r.viewer_id).name %></td>
+                <td><%= r.rating %></td>
+                <td><%= r.text %></td>
+              <% end %>
             </tr>
           <% end %>
         <% end %>
