@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20161128073525) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string  "text"
+    t.integer "critic_id"
     t.integer "movie_id"
     t.integer "viewer_id"
   end

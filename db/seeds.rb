@@ -4,6 +4,7 @@
 # Examples:
 #
 
+test=Viewer.create(name: "j", email: "1@gmail.com")
 #################################################### Movies ####################################################
 
 starwars = Movie.create(
