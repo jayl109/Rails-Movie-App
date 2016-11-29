@@ -1,7 +1,7 @@
 <% if viewer_signed_in? %>
   <li><%= link_to 'Movies', movies_path, :method=>'get' %></li>
   <li><%= link_to 'Critics', critics_path, :method=>'get' %></li>
-  <li><%= link_to 'Reviews - REMOVE?', reviews_index_path, :method=>'get' %></li>
+  <li><%= link_to 'Reviews', reviews_index_path, :method=>'get' %></li>
   <li><%= link_to 'Log Out', destroy_viewer_session_path, :method=>'delete' %></li>
 <% else %>
   <li><%= link_to 'Log In', new_viewer_session_path %></li>

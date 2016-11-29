@@ -7,6 +7,7 @@
   <tr>
     <td>
       <table class="list_table">
+      	<tr>Click "Subscribe" to follow a movie's activity.</tr>
         <% current_viewer.movies.each do |m| %>
           <tr>
             <td><%= link_to m.name, movie_path(m.id) %></td>
@@ -16,6 +17,7 @@
     </td>
     <td>
       <table class="list_table">
+      	<tr>Click "Subscribe" to follow a critic's activity.</tr>
         <% current_viewer.critics.each do |c| %>
           <tr>
             <td><%= link_to c.name, critic_path(c.id) %></td>
@@ -30,9 +32,11 @@
   </tr>
 </table>
 
-<% if current_viewer.has_role? :critic%>
-  <%="You are a Critic"%>
+<% if current_viewer.has_role? :critic %>
+  <%="You are a Critic."%>
+  <br><br>
 <% else %>
-  <%="You are a Viewer"%>
+  <%="You are a Viewer. Become a critic to start reviewing movies!"%>
+  <br><br>
+  <%= button_to "Become a Critic", becomecritic_path, :class => "button medium", :method => :patch %>
 <%end%>
-<%= button_to "Become a Critic", becomecritic_path, :class => "button medium", :method => :patch %>
