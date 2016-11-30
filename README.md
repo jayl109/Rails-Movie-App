@@ -4,7 +4,8 @@ WRITEUP
 
 Title: MovieExplorer
 Team Members: Jason Lum, Matthew Li, Nathan Khuu
-Demo Link: https://github.com/jayl109/Rails-Movie-App
+Demo Link: https://www.youtube.com/watch?v=TP674HdC2IU
+https://github.com/jayl109/Rails-Movie-App
 
 Idea: An application where movie viewers and critics can read information about and write ratings and reviews for movies, as well as subscribe to movies and critics to follow their activity.
 
