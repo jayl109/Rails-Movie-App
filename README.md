@@ -33,6 +33,6 @@ Features:
 	- Users can subscribe to movies and critics to follow their activity
 
 Division of Labor:
-	- Jason: 
+	- Jason: Devise, models, model relationships, subscribing
 	- Matthew: Made individual movie and critic pages, styling, seeds
-	- Nathan: 
+	- Nathan: Rolify, Home page, movie/critic tables, bug fixes
