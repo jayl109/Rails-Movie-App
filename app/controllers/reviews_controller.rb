@@ -20,9 +20,11 @@ class ReviewsController < ApplicationController
 		@review.text = params[:review][:text]
 		@review.viewer_id = current_viewer.id
 		@review.movie_id = params[:movie_id]
-		@movie = Movie.find(params[:movie_id])
-		@movie.update_attribute(:avg_rating, compute_avg_rating_path(:movie_id))
 		@review.save
+		@movie = Movie.find(params[:movie_id])
+		@reviews = Review.where(:movie_id => params[:movie_id])
+		@movie.avg_rating = (@reviews.sum("rating") / @reviews.count).round
+		@movie.save
 		redirect_to "/movies"
 	end
 end
