@@ -1,48 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WRITEUP
 
-Things you may want to cover:
+Title: MovieExplorer
+Team Members: Jason Lum, Matthew Li, Nathan Khuu
+Demo Link: https://github.com/jayl109/Rails-Movie-App
 
-* Ruby version
+Idea: An application where movie viewers and critics can read information about and write ratings and reviews for movies, as well as subscribe to movies and critics to follow their activity.
 
-* System dependencies
+Models and Description:
+Critic
+	- Has name and biography
+	- Can make reviews with their names attached to them
+	- Has and belongs to many viewers
+	- Has many reviews
+Movie
+	- Has name, average rating, and description
+	- Has and belongs to many viewers
+	- Has many reviews
+Review
+	- Has rating, review text, critic ID, movie ID, and viewer ID
+	- Belongs to viewers, movies, and critics
+Viewer
+	- Has name
+	- Certain viewers are critics
+	- Can make anonymous reviews
+	- Has and belongs to many movies and critics
 
-* Configuration
+Features:
+	- Users can log in
+	- Viewers can make anonymous reviews, critics can make reviews
+	- Users can subscribe to movies and critics to follow their activity
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-Some setup you must do manually if you haven't yet:
-
-  1. Ensure you have defined default url options in your environments files. Here
-     is an example of default_url_options appropriate for a development environment
-     in config/environments/development.rb:
-
-       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-     In production, :host should be set to the actual host of your application.
-
-  2. Ensure you have defined root_url to *something* in your config/routes.rb.
-     For example:
-
-       root to: "home#index"
-
-  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-     For example:
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-  4. You can copy Devise views (for customization) to your app by running:
-
-       rails g devise:views
+Division of Labor:
+	- Jason: 
+	- Matthew: Made individual movie and critic pages, styling, seeds
+	- Nathan: 
