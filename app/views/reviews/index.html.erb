@@ -8,7 +8,9 @@
     <th>Critic</th>
     <th>Rating</th>
     <th>Review</th>
-    <th></th>
+    <% if current_viewer.has_role? :critic %>
+      <th>Delete</th>
+    <% end %>
   </tr>
   <% @reviews.each do |r| %>
     <tr>
@@ -16,7 +18,9 @@
       <td><%= r.critic.name if r.critic != nil%></td>
       <td><%= r.rating %></td>
       <td><%= r.text %></td>
-      <td><%= button_to "Delete Review", delete_path(id: r.id), :class => "button medium", :method => :patch %></td>
+      <% if current_viewer.has_role? :critic %>
+        <td><%= button_to "Delete Review", delete_path(id: r.id), :class => "button medium", :method => :patch %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
